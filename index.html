@@ -15,13 +15,31 @@
     <link rel="stylesheet" href="./css/spectre-exp.css">
     <link rel="stylesheet" href="./css/yeo.css">
     <meta property="og:title" content="Webinar NEOOH">
-    <meta property="og:url" content="">
-    <meta property="og:description" content="">
+    <meta property="og:url" content="https://neooh.vercel.app">
+    <meta property="og:description" content="VOcê é o nosso convidado para o Webinar da NEOOH!">
     <meta property="og:site_name" content="">
-    <meta property="og:type" content="product">
+    <meta property="og:type" content="Evento">
     <meta property="og:image" content="">
 </head>
+<style>
+    .form-control {
+        border: 1px solid rgba(28, 27, 27, 0.462) !important;
+        border-radius: 5px !important;
+        padding: 10px;
+        width: 80%;
+    }
 
+    .label {
+        text-align: right !important;
+    }
+
+    .button {
+        padding: 10px 50px;
+        background-color: #0A007E;
+        color: #fff;
+        border-radius: 5px;
+    }
+</style>
 <body>
     <div class="yeo-slogan">
         <div class="container yeo-header">
@@ -99,19 +117,19 @@
                     </div>
                     <div class="column col-6 col-sm-12">
                         <form id="registrationForm">
-                            <label for="nome">Nome:</label><br>
-                            <input type="text" id="nome" name="nome" required><br><br>
+                            <label class="label" for="nome">Nome:</label><br>
+                            <input class="form-control" type="text" id="nome" name="nome" required><br><br>
                             
-                            <label for="email">E-mail:</label><br>
-                            <input type="email" id="email" name="email" required><br><br>
+                            <label class="label" for="email">E-mail:</label><br>
+                            <input class="form-control" type="email" id="email" name="email" required><br><br>
                             
-                            <label for="telefone">Número de telefone:</label><br>
-                            <input type="text" id="telefone" name="telefone" required><br><br>
+                            <label class="label" for="telefone">Número de telefone:</label><br>
+                            <input class="form-control" type="text" id="telefone" name="telefone" required><br><br>
                             
-                            <label for="area">Área de atuação:</label><br>
-                            <input type="text" id="area" name="area" required><br><br>
+                            <label class="label" for="area">Área de atuação:</label><br>
+                            <input class="form-control" type="text" id="area" name="area" required><br><br>
                             
-                            <input type="submit" value="Enviar">
+                            <input class="button" type="submit" value="Enviar">
                         </form>
                     </div>
                 </div>
@@ -153,25 +171,20 @@
                     area: $('#area').val()
                 };
     
-                console.log('Dados do formulário:', formData); // Verifique se os dados estão corretos
+                console.log(JSON.stringify(formData));
     
-                $.ajax({
-                    url: 'https://neooh.000webhostapp.com/api.php',
-                    type: 'POST',
-                    contentType: 'application/json',
-                    data: JSON.stringify(formData),
-                    success: function(data) {
-                        if (data.status === 'success') {
-                            alert('Dados enviados com sucesso!');
-                        } else {
-                            alert('Erro: ' + data.message);
-                        }
-                    },
-                    error: function(xhr, status, error) {
-                        console.error('Erro:', error);
-                        alert('Ocorreu um erro ao enviar os dados.');
+                $.post('https://neooh.000webhostapp.com/api.php', JSON.stringify(formData), function(data) {
+                    if (data.status === 'success') {
+                        alert('Dados enviados com sucesso!');
+                    } else {
+                        alert('Erro: ' + data.message);
                     }
+                }, 'json')
+                .fail(function(xhr, status, error) {
+                    console.error('Erro:', error);
+                    alert('Ocorreu um erro ao enviar os dados.');
                 });
+
             });
         });
     </script>
