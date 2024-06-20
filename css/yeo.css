@@ -60,9 +60,9 @@ a:active {
     background-size: auto;
     padding-bottom: 3rem;
 /* Rectangle 10: */
-background-image: -webkit-linear-gradient(44deg, #0C0091 0%, #00A87E 100%);
-background-image: -o-linear-gradient(44deg, #0C0091 0%, #00A87E 100%);
-background-image: linear-gradient(134deg, #0C0091 0%, #00A87E 100%);
+background-image: -webkit-linear-gradient(44deg, #510273 0%, #8704bf 100%);
+background-image: -o-linear-gradient(44deg, #510273 0%, #8704bf 100%);
+background-image: linear-gradient(134deg, #510273 0%, #8704bf 100%);
 }
 
 .yeo-slogan .slogan-bold {
@@ -116,7 +116,7 @@ background-image: linear-gradient(134deg, #0C0091 0%, #00A87E 100%);
 }
 
 .slogan .slogan-bold {
-    color: #00ffd4;
+    color: #f2f2f2;
 }
 
 
@@ -132,13 +132,13 @@ background-image: linear-gradient(134deg, #0C0091 0%, #00A87E 100%);
 }
 
 .feature-title {
-    font-weight: 200;
-    font-size: 1rem;
+    font-weight: 500;
+    font-size: 1.4rem;
     padding: .5rem 0 .5rem 0;
     opacity: .5;
     text-align: center;
     display: inline-block;
-    border-bottom: 1px solid #bcb9b9;
+    border-bottom: 1px solid #ffffff;
     margin: 0 auto 2rem;
 }
 
@@ -364,7 +364,7 @@ background-image: linear-gradient(134deg, #0C0091 0%, #00A87E 100%);
 
 
 .yeo-footer {
-    background: #0a007e;
+    background: #510273;
     color: #fff;
     padding: 3rem 0;
 }
